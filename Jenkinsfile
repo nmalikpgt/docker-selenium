@@ -6,20 +6,27 @@ pipeline{
     stage('Build Jar')
     {
         steps{
-        sh "mvn clean package -DskipTests"
+        script {
+        		bat 'mvn clean package -DskipTests'
+        		}
         }
     }
     stage('Build Image')
     {
         steps{
-        sh "docker build -t=nmalik1986/selenium ."
+        script {
+               bat "docker build -t=nmalik1986/selenium ."
+               }
         }
     }
     stage('Push Image')
         {
             steps{
-            sh "docker push nmalik1986/selenium"
+            script
+            {
+            bat "docker push nmalik1986/selenium"
             }
+          }
         }
 
     }
