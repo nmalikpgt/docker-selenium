@@ -1,38 +1,27 @@
 pipeline{
 
     agent any
-    environment
-    {
-        NUMBER=100
-    }
+
     stages{
-    stage('stage-1')
+    stage('Build Jar')
     {
         steps{
-        echo "NUMBER = ${NUMBER}"
+        bat "mvn clean package -DskipTests"
         }
     }
-    stage('stage-2')
+    stage('Build Image')
     {
-    environment{
-    NUMBER=10
-    }
         steps{
-        echo "NUMBER = ${NUMBER}"
+        bat "docker build -t=nmalik1986/selenium ."
         }
     }
-    stage('stage-3')
+    stage('Push Image')
         {
             steps{
-            echo "NUMBER = ${NUMBER}"
+            bat "docker push nmalik1986/selenium"
             }
         }
 
     }
-    post()
-    {
-        always{
-        echo "This is post method"
-        }
-    }
+
 }
