@@ -11,6 +11,7 @@ pipeline{
     {
         steps{
 
+        bat 'cd E:\schinna\DemoProject\jenkins-ci-cd\volumes\node\workspace\SELENIUM_DOCKER_BUILDER'
         bat 'mvn clean package -DskipTests'
 
 
