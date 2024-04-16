@@ -10,10 +10,9 @@ pipeline{
     stage('Build Jar')
     {
         steps{
-        script
-        {
-        bat "mvn clean package -DskipTests"
-        }
+
+        bat 'mvn clean package -DskipTests'
+
 
         }
     }
@@ -21,16 +20,16 @@ pipeline{
     stage('Build Image')
     {
         steps{
-        script{
-        bat "docker build -t=nmalik1986/selenium ."
-        }
+
+        bat 'docker build -t=nmalik1986/selenium .'
+
     }
     }
     stage('Push Image')
         {
         steps{
          script{
-            bat "docker push nmalik1986/selenium"
+            bat 'docker push nmalik1986/selenium'
                 }
      }
 
