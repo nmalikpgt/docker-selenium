@@ -11,17 +11,15 @@ pipeline{
     stage('Build Jar')
     {
         steps{
-        dir('\workspace\SELENIUM_DOCKER_BUILDER'){
-            bat 'mvn clean package -DskipTests'
-        }
-}
+        bat "mvn clean package -DskipTests"
+     }
     }
 
     stage('Build Image')
     {
         steps{
 
-        bat 'docker build -t=nmalik1986/selenium .'
+        bat "docker build -t=nmalik1986/selenium ."
 
     }
     }
@@ -29,7 +27,7 @@ pipeline{
         {
         steps{
          script{
-            bat 'docker push nmalik1986/selenium'
+            bat "docker push nmalik1986/selenium"
                 }
      }
 
