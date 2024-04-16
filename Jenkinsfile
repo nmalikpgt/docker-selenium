@@ -1,10 +1,7 @@
 pipeline{
 
     agent any
-    tools{
-        maven 'maven3'
-        jdk 'jdk21'
-        }
+
     stages{
 
     stage('Build Jar')
@@ -12,7 +9,7 @@ pipeline{
         steps{
         script
         {
-        sh 'mvn clean package -DskipTests'
+        bat 'mvn clean package -DskipTests'
         }
 
      }
@@ -22,7 +19,7 @@ pipeline{
     {
         steps{
 
-        sh "docker build -t=nmalik1986/selenium ."
+        bat "docker build -t=nmalik1986/selenium ."
 
     }
     }
@@ -30,7 +27,7 @@ pipeline{
         {
         steps{
          script{
-            sh "docker push nmalik1986/selenium"
+            bat "docker push nmalik1986/selenium"
                 }
      }
 
