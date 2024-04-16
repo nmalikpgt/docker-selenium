@@ -11,7 +11,7 @@ pipeline{
     {
         steps{
         script {
-        bat "mvn clean package -DskipTests"
+        bat 'mvn clean package -DskipTests'
         }
         }
     }
