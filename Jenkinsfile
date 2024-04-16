@@ -2,16 +2,16 @@ pipeline{
 
     agent any
     tools{
-    maven "3.9.6"
+    maven "maven3"
+    jdk "jdk21"
     }
-
 
     stages{
     stage('Build Jar')
     {
         steps{
         script {
-        bat 'mvn clean package -DskipTests'
+        bat "mvn clean package -DskipTests"
         }
         }
     }
