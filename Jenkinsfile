@@ -12,7 +12,7 @@ pipeline{
         steps{
         script
         {
-        bat 'mvn clean package -DskipTests'
+        sh 'mvn clean package -DskipTests'
         }
 
      }
@@ -22,7 +22,7 @@ pipeline{
     {
         steps{
 
-        bat "docker build -t=nmalik1986/selenium ."
+        sh "docker build -t=nmalik1986/selenium ."
 
     }
     }
@@ -30,7 +30,7 @@ pipeline{
         {
         steps{
          script{
-            bat "docker push nmalik1986/selenium"
+            sh "docker push nmalik1986/selenium"
                 }
      }
 
