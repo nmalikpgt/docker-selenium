@@ -1,13 +1,13 @@
-echo "Checking if hub is ready"
+echo "Checking if hub is ready and time limit is 180"
 
 count=0
 while [ "$( curl -s http://10.10.10.215:4444/wd/hub/status | jq -r .value.ready )" != "true" ]
 do
   count=$((count+1))
   echo "Attempt: ${count}"
-  if [ "$count" -ge 30 ]
+  if [ "$count" -ge 180 ]
   then
-    echo "**** HIB IS NOT READY WITHIN 30 SECONDS ****"
+    echo "**** HUB IS NOT READY WITHIN 30 SECONDS ****"
     exit 1
     fi
 	sleep 1
