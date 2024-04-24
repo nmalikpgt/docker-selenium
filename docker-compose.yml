@@ -11,7 +11,7 @@ services:
     depends_on:
       - hub
     deploy:
-      replicas: 4
+      replicas: 3
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -26,7 +26,7 @@ services:
     depends_on:
       - hub
     deploy:
-      replicas: 4  
+      replicas: 3  
     environment:
       - SE_EVENT_BUS_HOST=hub
       - SE_EVENT_BUS_PUBLISH_PORT=4442
@@ -36,7 +36,7 @@ services:
       - HUB_HOST=hub
 
   testCaseExecution:
-    image: demo-tests-first
+    image: nmalik1986/selenium
     depends_on:
       - firefox
       - chrome
