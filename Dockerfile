@@ -1,7 +1,8 @@
 FROM bellsoft/liberica-openjdk-alpine
 
 # Install curl and jq in linux container
-RUN apk --no-cache add curl
+RUN apt-get update
+RUN apt-get install -y curl
 
 RUN mkdir selenium-docker
 WORKDIR /selenium-docker
