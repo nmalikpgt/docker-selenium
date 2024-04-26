@@ -6,10 +6,12 @@ do
   echo "Attempt: ${count}"
   if [ "$count" -ge 60 ]
   then
-    echo "**** HUB IS NOT READY SECONDS ****"
+    echo "**** HUB IS NOT READY WITHIN 200 SECONDS ****"
     exit 1
     fi
 	sleep 1
 done
-# start the java commands
+done
+echo "Selenium grid is up and running. Now Running Tests...."
+# start the java command
 java -cp 'libs/*' org.testng.TestNG testng.xml
