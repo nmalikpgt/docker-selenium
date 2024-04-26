@@ -11,5 +11,5 @@ do
     fi
 	sleep 1
 done
-# start the java command
+# start the java commands
 java -cp 'libs/*' org.testng.TestNG testng.xml
