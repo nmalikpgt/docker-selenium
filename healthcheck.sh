@@ -1,4 +1,3 @@
-#!/bin/sh
 echo "Checking if hub is ready and time limit is 60 seconds"
 count=0
 while [ "$( curl -s http://10.10.10.215:4444/wd/hub/status | jq -r .value.ready )" != "true" ]
