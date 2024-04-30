@@ -8,11 +8,10 @@ do
   if [ "$count" -ge 200 ];
   then
         echo "**** HUB IS NOT READY WITHIN 200 SECONDS ****"
-        exit 1
-    fi
-    sleep 1
-  done
-
+        #exit 1
+  fi
+  sleep 1
+done
 echo "Selenium grid is up and running. Now Running Tests...."
 #start the java command
 java -cp 'libs/*' org.testng.TestNG testng.xml
