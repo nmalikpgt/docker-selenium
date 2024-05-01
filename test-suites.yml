@@ -3,7 +3,7 @@ services:
   testCaseExecution:
     image: nmalik1986/selenium
     environment:
-      - HUB_HOST=hub  
+      - HUB_HOST=hub
     volumes:
       - ./results:/selenium-docker/test-output
       
