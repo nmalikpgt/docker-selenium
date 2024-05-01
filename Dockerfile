@@ -1,5 +1,4 @@
 FROM bellsoft/liberica-openjdk-alpine
-
 # Instal curl and jq in linux container
 RUN apk add curl jq
 
