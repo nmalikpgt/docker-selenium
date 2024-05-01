@@ -5,7 +5,8 @@ count=0
 max_attempts=200  # Maximum number of attempts
 hub_url="http://10.10.10.215:4444/wd/hub/status"
 
-while [ "$(curl -s "$hub_url" | jq -r '.value.ready')" != "true" ]; do
+while [ "$(curl -s "$hub_url" | jq -r '.value.ready')" != "true" ];
+  do
     ((count++))
     echo "Attempt: $count"
     if [ "$count" -ge "$max_attempts" ]; then
