@@ -7,7 +7,7 @@ RUN mkdir selenium-docker
 WORKDIR /selenium-docker
 ADD target/docker-resources ./
 ADD healthcheck.sh   healthcheck.sh
-ENTRYPOINT healthcheck.sh
+ENTRYPOINT sh healthcheck.sh
 
 
 
