@@ -11,6 +11,6 @@ do
   fi
   sleep 1
 done
-echo "Selenium grid is up and running. Now Running Tests...."
+echo 'Selenium grid is up and running. Now Running Tests....'
 #start the java command
 java -cp 'libs/*' org.testng.TestNG testng.xml
