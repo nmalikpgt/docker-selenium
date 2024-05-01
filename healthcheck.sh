@@ -7,9 +7,9 @@ do
   if [ "$count" -ge 200 ];
   then
       echo "**** HUB IS NOT READY WITHIN 200 SECONDS ****"
-      exit 1
+      exit 1;
   fi
-  sleep 1
+  sleep 1;
 done
 echo 'Selenium grid is up and running. Now Running Tests....'
 #start the java command
