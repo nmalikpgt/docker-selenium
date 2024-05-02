@@ -28,28 +28,6 @@ agent any
 
     }
 
-    stage('Run Selenium Grid')
-        {
-            steps{
-            script
-            {
-            bat "docker-compose -f grid.yml up -d"
-            }
-          }
-        }
-
-        stage('Run Test Cases')
-        {
-            steps{
-            bat "docker-compose -f test-suites.yml up"
-        }
-        }
     }
 
-    post{
-       always{
-       bat "docker-compose -f grid.yml down"
-       bat "docker-compose -f test-suites.yml down"
-        }
-       }
 }
